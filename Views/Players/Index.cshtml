@@ -1,0 +1,171 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Match.MatchID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.account_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.player_slot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hero_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_0)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.item_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deaths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assists)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leaver_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_hits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.denies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gold_per_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.xp_per_min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gold_spent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hero_damage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tower_damage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hero_healing)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match.MatchID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.account_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.player_slot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hero_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_0)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deaths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assists)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leaver_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_hits)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.denies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gold_per_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.xp_per_min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gold_spent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hero_damage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tower_damage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hero_healing)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlayerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlayerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlayerID })
+        </td>
+    </tr>
+}
+
+</table>

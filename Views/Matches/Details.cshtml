@@ -1,0 +1,125 @@
+﻿@model ContosoUniversity.Models.Match
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>Match Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Match ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.match_id)
+        </dd>
+        <dd>
+            <section class="radiant">
+                <h3>The Radiant</h3>
+                <table class="table">
+                    <tr>
+                        <th>Hero</th>
+                        <th>Player</th>
+                        <th>Level</th>
+                        <th>Score</th>
+                        <th>Gold</th>
+                        <th>LH</th>
+                        <th>Denies</th>
+                        <th>GPM</th>
+                        <th>XPM</th>
+                    </tr>
+                    @for (var i = 0; i < 5; i++)
+                    {
+                        var item = Model.player.ElementAt(i);
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(String.Format("../../assets/thumbnails/{0}.png", item.hero_id))" height="24" width="42">
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.steam_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.level)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.kills)/@Html.DisplayFor(modelItem => item.assists)/@Html.DisplayFor(modelItem => item.deaths)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gold)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.last_hits)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.denies)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gold_per_min)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.xp_per_min)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </section>
+            <section class="dire">
+                <h3 color = red>The Dire</h3>
+                <table class="table">
+                    <tr>
+                        <th>Hero</th>
+                        <th>Player</th>
+                        <th>Level</th>
+                        <th>Score</th>
+                        <th>Gold</th>
+                        <th>LH</th>
+                        <th>Denies</th>
+                        <th>GPM</th>
+                        <th>XPM</th>
+                    </tr>
+                    @for (var i = 5; i < 10; i++)
+                    {
+                        var item = Model.player.ElementAt(i);
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(String.Format("../../assets/thumbnails/{0}.png", item.hero_id))" height="24" width="42">
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.steam_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.level)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.kills)/@Html.DisplayFor(modelItem => item.assists)/@Html.DisplayFor(modelItem => item.deaths)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gold)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.last_hits)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.denies)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gold_per_min)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.xp_per_min)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </section>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back", "Index")
+</p>

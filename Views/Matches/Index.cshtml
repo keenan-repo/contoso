@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Match>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>@*  *@
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.match_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.match_seq_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.match_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.match_seq_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_time)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.MatchID }) 
+        </td>
+    </tr>
+}
+
+</table>
